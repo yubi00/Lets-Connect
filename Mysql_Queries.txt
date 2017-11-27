@@ -1,0 +1,102 @@
+
+
+remaing to do-----
+1.whilist item
+2.request whielist
+3.comment
+4.rating
+5.admin--update.
+6.delete....
+7.add delete adds
+8.change background color admin
+
+1.signup1,.............
+
+create table signup1
+(
+id INT(4) NOT NULL AUTO_INCREMENT,
+name varchar(44),
+email varchar(33),
+address varchar(33),
+username varchar(44),
+password varchar(44),
+image varchar(44),
+gender enum('male','female'),
+area varchar(33),
+primary key(id)
+);
+
+
+2.donate1..............
+
+create table donate1
+(
+donate_id INT(4) NOT NULL AUTO_INCREMENT,
+code varchar(44),
+name varchar(33),
+price varchar(33),
+contact varchar(44),
+image varchar(44),
+area varchar(33),
+user_id int(4) not null,
+foreign key d_id(user_id) references signup1(id), 
+primary key (donate_id)
+);
+3.wish item.................
+
+create table wish
+(
+donate_id INT(4) NOT NULL AUTO_INCREMENT,
+code varchar(44),
+name varchar(33),
+price varchar(33),
+contact varchar(44),
+image varchar(44),
+area varchar(33),
+user_id int(4) not null,
+foreign key d_id(user_id) references signup1(id), 
+primary key (donate_id)
+);
+4. contact1........
+
+create table contact1
+(
+id INT(4) NOT NULL AUTO_INCREMENT,
+name varchar(44),
+email varchar(33),
+address varchar(33),
+city varchar(44),
+nationality varchar(44),
+image varchar(44),
+gender enum('male','female'),
+area varchar(33),
+primary key(id)
+);
+5. advertisment...................
+
+CREATE TABLE `advertisement` (
+  `aid` int(6) NOT NULL AUTO_INCREMENT,
+  `name` varchar(20) NOT NULL,
+  `image` varchar(30) NOT NULL,
+  PRIMARY KEY (`aid`)
+) 
+6.cooments/......................
+
+CREATE TABLE `comments` (
+  `comment_id` int(6) NOT NULL AUTO_INCREMENT,
+  `id` int(6) NOT NULL,
+  `comments` varchar(1000) DEFAULT NULL,
+  PRIMARY KEY (`comment_id`),
+  KEY `id` (`id`)
+) ;
+
+7.admin tables.
+
+
+ 
+ CREATE TABLE `admin` (
+  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `username` varchar(20) NOT NULL,
+  `password` varchar(20) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=latin1 |
